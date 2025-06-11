@@ -21,7 +21,8 @@
 [node name="Player" parent="." node_paths=PackedStringArray("label") instance=ExtResource("2_efxa6")]
 z_index = 10
 position = Vector2(63, 33)
-jump_force = 200.0
+climb_speed = 10.0
+jump_force = 2500.0
 gravity = 500.0
 label = NodePath("CanvasLayer2/Label")
 
