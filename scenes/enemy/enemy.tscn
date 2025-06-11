@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://jwrwqw6qknk1"]
+
+[ext_resource type="Script" uid="uid://jjq44b288xvv" path="res://scenes/enemy/enemy.gd" id="1_md0e3"]
+[ext_resource type="Resource" uid="uid://cyvms40vgbr33" path="res://enemies/bat/bat.tres" id="2_4ra3w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_272bh"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_md0e3")
+move_direction = Vector2(-150, 0)
+enemy = ExtResource("2_4ra3w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_272bh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

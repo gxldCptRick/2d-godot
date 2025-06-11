@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3v70bmobxmpm"]
+
+[ext_resource type="Script" uid="uid://bx8akk153jfnm" path="res://scenes/player/player.gd" id="1_dovo2"]
+[ext_resource type="Texture2D" uid="uid://bjk06pim3kwft" path="res://Sprites/Characters/character_0009.png" id="2_gmlin"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xm2m"]
+height = 25.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("label") groups=["player"]]
+scale = Vector2(0.661426, 0.661426)
+script = ExtResource("1_dovo2")
+jump_force = 1000.0
+gravity = 125.0
+label = NodePath("CanvasLayer/Label")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 23.0
+offset_right = 93.0004
+offset_bottom = 46.0
+scale = Vector2(1.88454, 1.87573)
+text = "Score : 0"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(13.607, -16.6307)
+scale = Vector2(2.0004, -0.183399)
+zoom = Vector2(5, 5)
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+position = Vector2(3, -2)
+texture = ExtResource("2_gmlin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -2)
+shape = SubResource("CapsuleShape2D_0xm2m")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=3 format=3 uid="uid://cyvms40vgbr33"]
+
+[ext_resource type="PackedScene" uid="uid://bgeswnsf8pjil" path="res://enemies/bat/bat.tscn" id="1_aarjn"]
+[ext_resource type="Script" uid="uid://d2cofrbkqcsv3" path="res://resources/enemy.gd" id="1_tn3xi"]
+
+[resource]
+script = ExtResource("1_tn3xi")
+name = "Bat"
+scene = ExtResource("1_aarjn")
+metadata/_custom_type_script = "uid://d2cofrbkqcsv3"

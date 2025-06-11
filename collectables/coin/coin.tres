@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Collectable" load_steps=3 format=3 uid="uid://ba6djl7lktwoa"]
+
+[ext_resource type="PackedScene" uid="uid://cbpdlcsto2eet" path="res://collectables/coin/coin.tscn" id="1_f0sm1"]
+[ext_resource type="Script" uid="uid://bvya2n1os7oh3" path="res://resources/collectable.gd" id="1_pi8y3"]
+
+[resource]
+script = ExtResource("1_pi8y3")
+name = "Coin"
+scene = ExtResource("1_f0sm1")
+score = 1
+metadata/_custom_type_script = "uid://bvya2n1os7oh3"

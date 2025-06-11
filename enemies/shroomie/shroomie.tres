@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyDefinition" load_steps=3 format=3 uid="uid://7swobanvm7fe"]
+
+[ext_resource type="Script" uid="uid://d2cofrbkqcsv3" path="res://resources/enemy.gd" id="1_bggwy"]
+[ext_resource type="PackedScene" uid="uid://bdl6vuqxbtwyg" path="res://enemies/shroomie/sprite.tscn" id="1_opq5j"]
+
+[resource]
+script = ExtResource("1_bggwy")
+name = "Shroomie"
+scene = ExtResource("1_opq5j")
+metadata/_custom_type_script = "uid://d2cofrbkqcsv3"

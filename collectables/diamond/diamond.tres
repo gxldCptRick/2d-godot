@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Collectable" load_steps=3 format=3 uid="uid://dx6wpkdvjvwva"]
+
+[ext_resource type="Script" uid="uid://bvya2n1os7oh3" path="res://resources/collectable.gd" id="1_7ljo1"]
+[ext_resource type="PackedScene" uid="uid://dvhqqhip1mk7n" path="res://collectables/diamond/diamond.tscn" id="1_slxhy"]
+
+[resource]
+script = ExtResource("1_7ljo1")
+name = "Diamond"
+scene = ExtResource("1_slxhy")
+score = 10
+metadata/_custom_type_script = "uid://bvya2n1os7oh3"
