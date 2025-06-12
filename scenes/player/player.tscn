@@ -6,12 +6,11 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xm2m"]
 height = 25.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("label") groups=["player"]]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.661426, 0.661426)
 script = ExtResource("1_dovo2")
 jump_force = 1000.0
 gravity = 125.0
-label = NodePath("")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(3, -2)
