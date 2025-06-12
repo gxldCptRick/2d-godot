@@ -1,0 +1,44 @@
+# Whenever a tag push matching pattern "v*" then run the job
+name: "Merges to Main"
+on:
+  push:
+    branches:
+      - main
+jobs:
+  # job id, can be anything
+  export_game:
+    # Always use ubuntu-latest for this action
+    runs-on: ubuntu-latest
+    name: Export Game
+    steps:
+      # Always include the checkout step so that
+      # your project is available for Godot to export
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: export game
+        id: export
+        # Use latest version (see releases for all versions)
+        uses: firebelley/godot-export@v6.0.0
+        with:
+          # Defining all the required inputs
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_linux.x86_64.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.0/Godot_v4.0-stable_export_templates.tpz
+          relative_project_path: ./
+          relative_export_path: build/
+          archive_output: true
+          cache: true
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+        with:
+          path: build/
+  deploy-pages:
+    # Always use ubuntu-latest for this action
+    runs-on: ubuntu-latest
+    # Job name, can be anything
+    name: Deploy Pages
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
